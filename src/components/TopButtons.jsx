@@ -1,26 +1,26 @@
-import React from 'react';
+import React from "react";
 
 function TopButtons({setQuery}) {
     const cities =[
         {
             id:1,
-            title: 'London',
+            title: "London",
         },
         {
             id:2,
-            title: 'Sydney',
+            title: "Sydney",
         },
         {
             id:3,
-            title: 'Tokyo',
+            title: "Tokyo",
         },
         {
             id:4,
-            title: 'New York',
+            title: "New York",
         },
         {
             id:5,
-            title: 'Paris',
+            title: "Paris",
         },
     ];
     
@@ -39,4 +39,4 @@ function TopButtons({setQuery}) {
     );
 }
 
-export default TopButtons
+export default TopButtons;

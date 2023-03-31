@@ -1,25 +1,24 @@
-import React from 'react';
-import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons'; //imports icons from iconscout.com(Search & Location Icon)
-import { useState } from 'react';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons"; //imports icons from iconscout.com(Search & Location Icon)
+import { toast } from "react-toastify";
 
 function Inputs({setQuery, units, setUnits}) {
     const [city, setCity] = useState("");
 
-    const handleUnitsCHange= (e) => {
+    const handleUnitsChange= (e) => {
         const selectedUnit = e.currentTarget.name;
         if (units !== selectedUnit) setUnits(selectedUnit);
     };
 
     const handleSearchClick = () => {
-        if(city !=='') setQuery({q: city});
+        if(city !=="") setQuery({q: city});
     };
 
     const handleLocationClick = () =>{
         if (navigator.geolocation) {
-            toast.info('Fetching users location.');
+            toast.info("Fetching users location.");
             navigator.geolocation.getCurrentPosition((position) => {
-                toast.success('Location fetched!');
+                toast.success("Location fetched!");
                 let lat = position.coords.latitude;
                 let lon = position.coords.longitude;
 
@@ -59,7 +58,7 @@ function Inputs({setQuery, units, setUnits}) {
                 <button 
                     name="metric" 
                     className="text-xl text-white font-light hover:scale-125 transition ease-out "
-                    onClick={handleUnitsCHange}
+                    onClick={handleUnitsChange}
                 >
                     °C
                 </button>
@@ -67,7 +66,7 @@ function Inputs({setQuery, units, setUnits}) {
                 <button 
                     name="imperial" 
                     className="text-xl text-white font-light hover:scale-125 transition ease-out"
-                    onClick={handleUnitsCHange}
+                    onClick={handleUnitsChange}
                 >
                     °F
                 </button>
